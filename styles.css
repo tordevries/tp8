@@ -17,7 +17,7 @@ body {
   position: relative;
   width: 100%;
   height: 50vh;
-  background-image: url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5574746.jpg&w=596&h=596&c=sc&poi=face&q=85);
+  background-image: none; /* url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5574746.jpg&w=596&h=596&c=sc&poi=face&q=85); */
   background-size: cover;
   background-position: center center;
   box-shadow: 0px 3px 3px rgba(0,0,0,0.7);
@@ -26,7 +26,7 @@ body {
 /* make recipe title large, white with a shadow, and positioned specifically */
 #titleBanner h1 {
   font-family: "Londrina Solid", "Roboto Slab", serif;
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
   font-size: 500%;
   padding: 0;
@@ -39,7 +39,7 @@ body {
 }
 
 #titleBanner h1.tp6 {
-	color: black;
+	color: #fff;
 }
 
 /* make the 3 recipe columns display using a flexbox method */

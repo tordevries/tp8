@@ -31,9 +31,38 @@ function loadFileInto(fromFile, whereTo) {
 }
 
 
+// new Recipe object
+function Recipe(recipeName, contributorName, imageURL, ingredientsFilename, equipmentFilename, directionsFilename) {
+	
+	this.recipe = recipeName;
+	this.contributor = contributorName;
+	this.img = imageURL;
+	this.ingredients = ingredientsFilename;
+	this.equipment = equipmentFilename;
+	this.directions = directionsFilename;
+	
+	this.displayRecipe = function() {
+		
+		document.querySelector("#titleBanner h1").innerHTML = this.recipe;
+		document.querySelector("#contributor").innerHTML = "Contributed by " + this.contributor;
+		document.querySelector("#titleBanner").style.backgroundImage = "url(" + this.img + ")";
+		
+		loadFileInto(this.ingredients, "#ingredients ul");
+		loadFileInto(this.equipment, "#equipment ul");
+		loadFileInto(this.directions, "#directions ol");
+	
+		
+	}
+	
+	
+}
+
+SevenLayerBars = new Recipe("Seven Layer Bars", "Tor", "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5574746.jpg&w=596&h=596&c=sc&poi=face&q=85", "ingredients.html", "equipment.html", "directions.html");
+
+
 window.onload = function() {
 
-	document.querySelector("#titleBanner h1").classList.add("tp6");
+	document.querySelector("#titleBanner h1").classList.toggle("tp6");
 	
 	document.querySelector("#ingredients").onclick = function() {
 		document.querySelector("#ingredients ul").classList.toggle("showMe");
@@ -55,10 +84,10 @@ window.onload = function() {
 	
 	
 	
+	document.querySelector("#r1").onclick = function() {
+		SevenLayerBars.displayRecipe();	
+	}
 	
-	loadFileInto("ingredients.html", "#ingredients ul");
-	loadFileInto("equipment.html", "#equipment ul");
-	loadFileInto("directions.html", "#directions ol");
 	
 	
 } // end of window.onload
